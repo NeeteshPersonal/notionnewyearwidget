@@ -45,7 +45,6 @@
 <body>
     
     <div id="counter">
-
         <h2 class="box" id="days"></h2>
         <h2 class="box" id="hours"></h2>
         <h3>
@@ -56,21 +55,32 @@
 
 
 <script>
-    function CountDownTimer  () {
+    function CountDownTimer  (date) {
     left_days = document.getElementById("days");
     left_hours = document.getElementById("hours");
+
+    end = new Date(date);
+    _second = 1000;
+    _minute = _second * 60;
+    _hour = _minute * 60;
+    _day = _hour * 24;
     }
     function showRemaining (){
     now = new Date();
-    days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
-    days = days_in_this_month- now.getDate();
-    hours = 23 - now.getHours();
-    left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
-    left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
+    distance = end - now;
+    if (distance <= 0 ){
+      clearInterval (timer)
+      document.getElementById("counter").innerHTML = "<h3>2024 IS HERE!<h3>";
+      return
+    }
+    days = Math.floor(distance / _day)
+    hours = Math.floor((distance % _day) / _hour)
+    left_days.innerHTML = days + " days "
+    left_hours.innerHTML = hours + " hours "
     }
 
 timer = setInterval (showRemaining, 1000) 
-CountDownTimer() ;
+CountDownTimer("01/01/2024 00:00 AM") ;
 </script>
 </body>
 </html>
