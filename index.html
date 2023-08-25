@@ -75,8 +75,8 @@
     }
     days = Math.floor(distance / _day)
     hours = Math.floor((distance % _day) / _hour)
-    left_days.innerHTML = days + " days "
-    left_hours.innerHTML = hours + " hours "
+    left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
+    left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
     }
 
 timer = setInterval (showRemaining, 1000) 
