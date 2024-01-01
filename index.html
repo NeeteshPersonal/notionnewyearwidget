@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
-    <title>2024 in</title>
+    <title>2025 in</title>
     <style>
         
         body{
@@ -49,7 +49,7 @@
     
     <div id="counter">
         <h3>
-            2024 in
+            2025 in
         </h3>
         <h2 class="box" id="days"></h2>
     </div>
@@ -71,7 +71,7 @@
     distance = end - now;
     if (distance <= 0 ){
       clearInterval (timer)
-      document.getElementById("counter").innerHTML = "<h3>2024 IS HERE!<h3>";
+      document.getElementById("counter").innerHTML = "<h3>2025 IS HERE!<h3>";
       return
     }
     days = Math.floor(distance / _day)
@@ -79,7 +79,7 @@
     }
 
 timer = setInterval (showRemaining, 1000) 
-CountDownTimer("01/01/2024 00:00 AM") ;
+CountDownTimer("01/01/2025 00:00 AM") ;
 </script>
 </body>
 </html>
